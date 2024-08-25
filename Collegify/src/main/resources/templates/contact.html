@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org" lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Collegify</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+   <link rel="stylesheet" th:href="@{/css/sty.css}">
+            <style>
+
+                /* Media Query for small screens (max-width: 576px) */
+@media (max-width: 576px) {
+    /* Navbar adjustments */
+    .navbar-brand h1 {
+        font-size: 1.2rem;
+    }
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Form adjustments */
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Info adjustments */
+    .col-lg-4 h4 {
+        font-size: 1rem;
+    }
+    .col-lg-4 p {
+        font-size: 0.9rem;
+    }
+
+    /* Footer adjustments */
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Map iframe adjustments */
+    iframe {
+        height: 250px;
+    }
+}
+
+/* Media Query for extra small screens (max-width: 400px) */
+@media (max-width: 400px) {
+    /* Further navbar adjustments */
+    .navbar-brand h1 {
+        font-size: 1rem;
+    }
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Form and Contact Info further adjustments */
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.8rem;
+    }
+
+    .col-lg-4 h4 {
+        font-size: 0.9rem;
+    }
+    .col-lg-4 p {
+        font-size: 0.8rem;
+    }
+
+    /* Footer adjustments */
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Map iframe adjustments */
+    iframe {
+        height: 200px;
+    }
+}
+
+            </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
+    <a href="/home" class="navbar-brand p-0">
+        <h1 class="text-primary d-flex align-items-center">
+            <img width="80" height="80" src="/img/logo.png" alt="COLLEGIFY"> &nbsp; COLLEGIFY</h1>
+    </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+    <span class="fa fa-bars"></span>
+</button>
+    <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
+        <div class="navbar-nav ms-auto py-0"> <a href="/home" class="nav-item nav-link active"><strong>Home</strong></a>
+            <a href="/predict" class="nav-item nav-link active"><strong>Predict College</strong></a>
+
+            <a href="/about" class="nav-item nav-link active"><strong>About</strong></a>
+            <a href="/contact" class="nav-item nav-link active"><strong>Contact</strong></a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center">Contact Us</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Get in Touch</h3>
+            <form action="#" th:action="@{/contact}" method="post">
+                <div class="form-group mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="mobile">Mobile No:</label>
+                    <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="inquiry">Inquiry:</label>
+                    <textarea class="form-control" id="inquiry" name="inquiry" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h3>Find Us</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.7710865399146!2d73.8567423152508!3d18.52043068739807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf3cd59c1d9d%3A0x4d82e4d7e898d8c8!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1616679337174!5m2!1sen!2sin"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-4">
+            <h4>Email Us</h4>
+            <p><i class="fas fa-envelope"></i> support@collegify.com</p>
+        </div>
+        <div class="col-lg-4">
+            <h4>Call Us</h4>
+            <p><i class="fas fa-phone"></i> +91 12345 67890</p>
+        </div>
+        <div class="col-lg-4">
+            <h4>Visit Us</h4>
+            <p><i class="fas fa-map-marker-alt"></i> BAIF Road, Wagholi, Pune 412207, Maharashtra, India</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <p class="text-center">&copy; 2024 Collegify. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

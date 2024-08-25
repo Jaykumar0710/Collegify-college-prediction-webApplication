@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit College</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Edit College</h1>
+    <form th:action="@{/admin/colleges/{id}(id=${college.id})}" th:object="${college}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" th:field="${college.name}" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" class="form-control" th:field="${college.location}">
+        </div>
+        <div class="form-group">
+            <label for="university">University</label>
+            <input type="text" id="university" name="university" class="form-control" th:field="${college.university}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update College</button>
+        <a href="/admin/colleges" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Collegify</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles1.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
+    <a href="/home" class="navbar-brand p-0">
+        <h1 class="text-primary d-flex align-items-center">
+            <img width="80" height="80" src="/img/logo.png" alt="COLLEGIFY"> &nbsp; COLLEGIFY</h1>
+    </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+    <span class="fa fa-bars"></span>
+</button>
+    <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
+        <div class="navbar-nav ms-auto py-0"> <a href="/home" class="nav-item nav-link active"><strong>Home</strong></a>
+            <a href="/predict" class="nav-item nav-link active"><strong>Predict College</strong></a>
+
+            <a href="/about" class="nav-item nav-link active"><strong>About</strong></a>
+            <a href="/contact" class="nav-item nav-link active"><strong>Contact</strong></a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center">About Collegify</h1>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Our Objective</h2>
+                    <p>
+                        At Collegify, our primary objective is to empower students by providing them with a reliable, efficient, and user-friendly platform to predict and explore the best college options based on their MHT CET percentile. We aim to streamline the college search process, allowing students to make informed decisions in a fraction of the time.
+                    </p>
+                </div>
+            </div>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Our Motivation</h2>
+                    <p>
+                        The motivation behind Collegify stems from the challenges many students face during the college selection process. We recognize the overwhelming amount of information and the time-consuming nature of researching colleges. Our platform was developed to alleviate these concerns by offering a tailored, data-driven approach to college prediction, making it easier for students to focus on what truly matters: their education and future.
+                    </p>
+                </div>
+            </div>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Our Vision</h2>
+                    <p>
+                        We envision a future where every student has access to the tools and resources needed to find the best educational opportunities without the stress and uncertainty that often accompanies this process. Collegify is committed to continuous improvement and innovation, ensuring that our platform remains at the forefront of college prediction technology, providing students with accurate, timely, and personalized college recommendations.
+                    </p>
+                </div>
+            </div>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Why Choose Collegify?</h2>
+                    <p>
+                        Choosing the right college is a crucial decision, and Collegify is here to make that decision easier for you. With our advanced prediction algorithms, comprehensive database, and intuitive user interface, you can confidently explore and compare colleges that match your profile. Whether you're looking for the best engineering schools, the most affordable options, or colleges with specific programs, Collegify has got you covered.
+                    </p>
+                    <ul>
+                        <li>Fast and accurate college predictions based on your CET percentile</li>
+                        <li>Comprehensive college data including programs, fees, and rankings</li>
+                        <li>User-friendly interface designed to save you time</li>
+                        <li>Personalized recommendations based on your preferences</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Our Commitment to You</h2>
+                    <p>
+                        At Collegify, we are committed to your success. We believe that every student deserves the opportunity to pursue their dreams, and we're here to help you find the best path to achieve those dreams. Our team is dedicated to providing you with the most accurate and up-to-date information, ensuring that you have everything you need to make the best possible decision for your future.
+                    </p>
+                    <p>
+                        Join thousands of students who have already used Collegify to find their perfect college match. Start your journey with us today!
+                    </p>
+                </div>
+            </div>
+
+            <!-- New Section: About the Creator -->
+            <div class="card my-4">
+                <div class="card-body text-center">
+                    <img src="/img/pic1.jpeg" class="rounded-circle mb-4" alt="Creator Photo" style="width: 150px; height: 150px;">
+                    <h2>About the Creator</h2>
+                    <p>
+                        <strong>JayKumar Gunjawale</strong>, the founder and visionary behind Collegify, is a passionate educator and technology enthusiast. With a strong background in software development and a deep understanding of the challenges students face in choosing the right college, Jay created Collegify to bridge the gap between students and educational opportunities.
+                    </p>
+                    <p>
+                        Jay holds a degree in Computer Engineering and has years of experience in developing educational platforms. His dedication to improving the educational experience for students is evident in every aspect of Collegify. Jay believes in the power of technology to transform education and is committed to helping students achieve their dreams.
+                    </p>
+                    <p>
+                        In his free time, Jay enjoys exploring new technologies, mentoring aspiring developers, and contributing to open-source projects. He is also an avid reader and enjoys staying updated with the latest trends in education and technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <p class="text-center">&copy; 2024 Collegify. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

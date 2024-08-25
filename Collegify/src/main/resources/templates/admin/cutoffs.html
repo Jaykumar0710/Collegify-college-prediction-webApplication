@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cutoffs</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Cutoffs</h1>
+    <a href="/admin/cutoffs/new" class="btn btn-primary mb-3">Add New Cutoff</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>College</th>
+            <th>Department</th>
+            <th>Category</th>
+            <th>Percentile</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cutoff : ${cutoffs}">
+            <td th:text="${cutoff.id}">ID</td>
+            <td th:text="${cutoff.college.name}">College</td>
+            <td th:text="${cutoff.department}">Department</td>
+            <td th:text="${cutoff.category}">Category</td>
+            <td th:text="${cutoff.percentile}">Percentile</td>
+            <td th:text="${cutoff.year}">Year</td>
+            <td>
+                <a th:href="@{/admin/cutoffs/edit/{id}(id=${cutoff.id})}" class="btn btn-warning btn-sm">Edit</a>
+                <a th:href="@{/admin/cutoffs/delete/{id}(id=${cutoff.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Colleges</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Colleges</h1>
+    <a href="/admin/colleges/new" class="btn btn-primary mb-3">Add New College</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>University</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="college : ${colleges}">
+            <td th:text="${college.id}">ID</td>
+            <td th:text="${college.name}">Name</td>
+            <td th:text="${college.location}">Location</td>
+            <td th:text="${college.university}">University</td>
+            <td>
+                <a th:href="@{/admin/colleges/edit/{id}(id=${college.id})}" class="btn btn-warning btn-sm">Edit</a>
+                <a th:href="@{/admin/colleges/delete/{id}(id=${college.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Collegify Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
+    <a href="/home" class="navbar-brand p-0">
+        <h1 class="text-primary d-flex align-items-center">
+            <img width="80" height="80" src="/img/logo.png" alt="COLLEGIFY"> &nbsp; COLLEGIFY</h1>
+    </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+    <span class="fa fa-bars"></span>
+</button>
+    <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
+        <div class="navbar-nav ms-auto py-0"> <a href="/home" class="nav-item nav-link active"><strong>Home</strong></a>
+            <a href="/predict" class="nav-item nav-link active"><strong>Predict College</strong></a>
+
+            <a href="/about" class="nav-item nav-link active"><strong>About</strong></a>
+            <a href="/contact" class="nav-item nav-link active"><strong>Contact</strong></a> </div> </div> </nav>
+<div class="container">
+    <h1>MHT CET College Prediction</h1>
+    <form action="#" th:action="@{/predict}" th:object="${studentInput}" method="post">
+        <div class="form-group">
+            <label for="percentile">CET Percentile:</label>
+            <input type="number" class="form-control" id="percentile" th:field="*{percentile}">
+        </div>
+        <div class="form-group">
+            <label for="category">Caste Category:</label>
+            <select class="form-control" id="category" th:field="*{category}">
+                <option value="GENERAL">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <select class="form-control" id="department" th:field="*{department}">
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electronics Engineering">Electronics Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict Colleges</button>
+    </form>
+
+    <div class="content-info">
+        <p class="highlight">Easily find the best engineering college based on your MHT CET percentile!</p>
+        <p>Simply enter your CET percentile, choose your caste category, and the department you're interested in. Our system will predict the best colleges available for you.</p>
+        <p>Whether you're in General, OBC, SC, or ST category, we have you covered. Explore your opportunities and make informed decisions.</p>
+        <p class="highlight">Get started now and take the first step towards your dream college!</p>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

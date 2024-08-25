@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Cutoff</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Cutoff</h1>
+    <form th:action="@{/admin/cutoffs/{id}(id=${cutoff.id})}" th:object="${cutoff}" method="post">
+        <div class="form-group">
+            <label for="college">College</label>
+            <select id="college" name="college" class="form-control" th:field="${cutoff.college.id}">
+                <option th:each="college : ${colleges}" th:value="${college.id}" th:text="${college.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" class="form-control" th:field="${cutoff.department}" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" class="form-control" th:field="${cutoff.category}" required>
+                <option value="General" th:selected="${cutoff.category == 'General'}">General</option>
+                <option value="OBC" th:selected="${cutoff.category == 'OBC'}">OBC</option>
+                <option value="SC" th:selected="${cutoff.category == 'SC'}">SC</option>
+                <option value="ST" th:selected="${cutoff.category == 'ST'}">ST</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="percentile">Percentile</label>
+            <input type="number" step="0.01" id="percentile" name="percentile" class="form-control" th:field="${cutoff.percentile}" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" class="form-control" th:field="${cutoff.year}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Cutoff</button>
+        <a href="/admin/cutoffs" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+</body>
+</html>
